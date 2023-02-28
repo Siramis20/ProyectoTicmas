@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(images/70.jpg);
+    background-repeat: repeat;
+    background-size: 25%;
+    font-family: 'Arima Madurai', cursive;
+    font-size: larger;
+
+
+}
+
+.contenedor{
+    display: grid;
+    width: 95%;
+    max-width: 1000px;
+    margin: 20px auto;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:    "boton boton boton"
+                            "foto menu menu"
+                            "personales academica laborales"
+                            "habilidades objetivos objetivos";
+
+}
+
+div{
+    align-items: center;
+    justify-content: center;
+}
+
+.item{
+    border: 1px solid #014e15;
+    margin: 10px solid white;
+    padding: 0.5rem;
+    color: darkgreen;
+    text-align: center;
+    background: rgba(234, 255, 215, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.9px);
+    -webkit-backdrop-filter: blur(10.9px);
+    border: 1px solid rgba(234, 255, 215, 0.45);
+}
+
+nav{
+    grid-area: menu;
+    font-size: auto;
+    width: 90%;
+    justify-self: center;
+    font-weight: bold;
+
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 10px;
+
+}
+
+nav ul li{
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+    justify-self: center;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.personales{
+    grid-area: personales;
+}
+
+.academico{
+    grid-area: academica;
+}
+
+.laborales{
+    grid-area: laborales;
+}
+
+.habilidades{
+    grid-area: habilidades;
+}
+
+.objetivo{
+    grid-area: objetivos;
+    justify-content: center;
+}
+
+.item ul li{
+    list-style: none;
+    text-align: left;
+}
+
+.perfil{
+    grid-area: foto;
+    max-width: max-content;
+    justify-self: center;
+}
+
+.clara{
+    border-radius: 5%;
+}
+
+.oscuro{ 
+    background-image: url(images/Untitled.jpeg);
+}
+
+.oscuro .item{
+    color: antiquewhite;
+    background: darkslategrey (234, 255, 215, 0.25);
+
+}
+
+.boton{
+    margin: 10px;
+    grid-area: boton;
+}
+
+.lbl_switch{
+    display: inline-block;
+    width: 55px;
+    height: 33px;
+    background: rgba(234, 255, 215, 0.25);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    backdrop-filter: blur(10.9px);
+}
+
+#btn_switch:checked~ .lbl_switch{
+    background: darkslategrey (234, 255, 215, 0.25);
+    backdrop-filter: blur(10.9px);
+}
+
+.lbl_switch::after{
+    position: absolute;
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: rgb(0, 35, 0);
+    border-radius: 100%;
+    top: 6px;
+    left: 5px;
+    transition: 0.3s;
+
+}
+
+#btn_switch:checked~ .lbl_switch:after{
+    left: 28px;
+}
+
+#btn_switch{
+    display: none;
+}
+
+.item_boton{
+    padding: 0;
+}
+
+/*----------------------Media Query-----------------*/
+
+@media screen and (max-width: 768px ) {
+    .contenedor{
+        grid-template-areas:    "foto foto boton"
+                                "menu menu menu"
+                                "personales personales personales" 
+                                "academica academica academica"
+                                "laborales laborales laborales"
+                                "habilidades habilidades habilidades" 
+                                "objetivos objetivos objetivos";
+    }
+
+    nav ul{  
+        display: grid;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        justify-self: center;
+    }    
+    nav ul li{
+        padding: 0px;
+        justify-items: center;
+        justify-content: center;
+        justify-self: center;
+    }
+}
